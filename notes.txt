@@ -13,3 +13,21 @@ git add .
 git commit m "Message"
 git remote add origin url.git
 git push origin master
+
+Lombok generates boilerplate code at compile time
+
+@Data - generates getter and setters
+@Entity
+@Builder - generates builder methods for the class : Bulder design pattern
+
+
+@NotBlank needs this after Spring 2.3.0
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+@ManyToOne?? 
+??fetch=LAZY
+@JoinColumn??
+?GenertationType
