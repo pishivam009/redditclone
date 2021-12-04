@@ -1,0 +1,15 @@
+Spring Initializer
+-Spring Web
+-Lombok
+-Spring Security
+-Spring Data JPA
+-MySQL Driver
+-Java Mail Sender
+
+
+Git:
+git init
+git add .
+git commit m "Message"
+git remote add origin url.git
+git push origin master
