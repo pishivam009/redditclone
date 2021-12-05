@@ -28,6 +28,17 @@ Lombok generates boilerplate code at compile time
 </dependency>
 
 @ManyToOne?? 
-??fetch=LAZY
 @JoinColumn??
 ?GenertationType
+
+LAZY = fetch when needed
+EAGER = fetch immediately
+
+
+sprint.datasource.initialize=true runs when there is a schema.sql in src/main/resources
+
+@ManyToOne(fetch =FetchType.LAZY) is needed or else might get error while creating tables
+
+MySQL -> Show Engines;
+InnoDB : Default, Transaction support, row-level locking, foreign key
+SQL engine is defined as software that recognizes and interprets SQL commands to access a relational database and interrogate data.

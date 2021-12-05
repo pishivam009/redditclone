@@ -8,11 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
-
-import org.springframework.lang.Nullable;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,28 +16,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class Post {
+public class Comment {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long postId;
-	@NotBlank(message = "Post name cannot be null or empty")
-	private String postname;
-	@Nullable
-	private String url;
-	@Nullable
-	@Lob
-	private String description;
-	private Integer voteCount = 0;
+	private Long id;
+	private String text;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "userId", referencedColumnName = "userId")
-	private User user;
+	@JoinColumn(name="postId", referencedColumnName="postId")
+	private Post post;
 	private Instant createdDate;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", referencedColumnName = "id")
-	private Subreddit reddit;
-
+	@JoinColumn(name="userId", referencedColumnName="userId")
+	private User user;
+	
 }
