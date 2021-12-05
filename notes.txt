@@ -42,3 +42,29 @@ sprint.datasource.initialize=true runs when there is a schema.sql in src/main/re
 MySQL -> Show Engines;
 InnoDB : Default, Transaction support, row-level locking, foreign key
 SQL engine is defined as software that recognizes and interprets SQL commands to access a relational database and interrogate data.
+
+
+Extend WebSecurityConfigurerAdapter and override its configure(http) method
+Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request to a Web application against which they are currently authenticated. CSRF attacks exploit the trust a Web application has in an authenticated user.
+So we disable it. 
+
+Instant : Date/Time purpose
+
+RegisterRequest -> Data Transfer Objects (DTO)
+
+Spring recommends constructor injector rather than field injection. So we would avoid @Autowiring
+
+@Transactional : because we are using SQL Database Transaction
+
+Thymeleaf: HTML Template Creation for Emails 
+<span th:text="${message}"></span> : For thymeleaf message injection
+
+Slf4j : Logger object
+
+SpringRedditException custom exception to give general message to user in case of exception rather than giving technical details
+
+MailTrap : Email Testing app
+
+@Lob: LargeObject
+
+??Email validation is failing
