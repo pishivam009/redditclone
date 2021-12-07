@@ -31,8 +31,8 @@ public class AuthService {
 	public void signup(RegisterRequest registerRequest) {
 		User user = new User();
 		user.setUsername(registerRequest.getUsername());
-		user.setEmail(passwordEncoder.encode(registerRequest.getEmail()));
-		user.setPassword(registerRequest.getPassword());
+		user.setEmail(registerRequest.getEmail());
+		user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
 		user.setCreated(Instant.now());
 		user.setEnabled(false);
 

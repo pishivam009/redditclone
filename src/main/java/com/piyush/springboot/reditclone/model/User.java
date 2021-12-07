@@ -27,7 +27,7 @@ public class User {
 	private String username;
 	@NotBlank(message = "Password is required")
 	private String password;
-	//@Email
+	@Email
 	@NotEmpty(message = "Email is required")
 	private String email;
 	private Instant created;
