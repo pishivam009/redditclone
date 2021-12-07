@@ -68,3 +68,14 @@ MailTrap : Email Testing app
 @Lob: LargeObject
 
 ??Email validation is failing
+
+auth/{token} -> @PathVariable String token
+
+
+User registration takes time- 10-11 sec, because we are sending mail to external server
+Can run mail sending functionality Asynchronously in a different thread
+@EnableAsync in main method
+@Async on top of method
+
+Alternate: MessageQueues like RabbitMQ or ActiveMQ : They provide reliability.
+BUt too heavyweight for our usecase
