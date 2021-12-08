@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.piyush.springboot.reditclone.dto.AuthenticationResponse;
+import com.piyush.springboot.reditclone.dto.LoginRequest;
 import com.piyush.springboot.reditclone.dto.RegisterRequest;
 import com.piyush.springboot.reditclone.service.AuthService;
 
@@ -31,5 +33,10 @@ public class AuthController {
 	public ResponseEntity<String> verifyAccount(@PathVariable String token){
 		authService.verifyAccount(token);
 		return new ResponseEntity<>("User Account Activation Successful", HttpStatus.OK);
+	}
+	
+	@PostMapping("/login")
+	public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
+		return authService.login(loginRequest);
 	}
 }
