@@ -1,5 +1,6 @@
 package com.piyush.springboot.reditclone.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AuthController {
 
-	private final AuthService authService;
+	//private final AuthService authService;
+	@Autowired
+	AuthService authService;
 	
 	@PostMapping("/signup")
 	public ResponseEntity<String> signup( @RequestBody RegisterRequest registerRequest) {

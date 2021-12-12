@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -31,12 +32,25 @@ import lombok.AllArgsConstructor;
 @Transactional
 public class AuthService {
 
-	private final PasswordEncoder passwordEncoder;
-	private final UserRepository userRepository;
-	private final VerificationTokenRepository verificationTokenRepository;
-	private final MailService mailService;
-	private final AuthenticationManager authenticationManager;
-	private final JwtProvider jwtProvider;
+//	private final PasswordEncoder passwordEncoder;
+//	private final UserRepository userRepository;
+//	private final VerificationTokenRepository verificationTokenRepository;
+//	private final MailService mailService;
+//	private final AuthenticationManager authenticationManager;
+//	private final JwtProvider jwtProvider;
+
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	@Autowired
+	UserRepository userRepository;
+	@Autowired
+	VerificationTokenRepository verificationTokenRepository;
+	@Autowired
+	MailService mailService;
+	@Autowired
+	AuthenticationManager authenticationManager;
+	@Autowired
+	JwtProvider jwtProvider;
 
 	public void signup(RegisterRequest registerRequest) {
 		User user = new User();
@@ -78,13 +92,14 @@ public class AuthService {
 
 	}
 
-	
 	public AuthenticationResponse login(LoginRequest loginRequest) {
 		Authentication authenticate = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authenticate);
 		String token = jwtProvider.generateToken(authenticate);
-		return new AuthenticationResponse(token, loginRequest.getUsername());
+		
+		return AuthenticationResponse.builder().authenticationToken(token).username(loginRequest.getUsername()).build();
+		//return new AuthenticationResponse(token, loginRequest.getUsername());
 	}
 
 }

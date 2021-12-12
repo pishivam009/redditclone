@@ -3,6 +3,7 @@ package com.piyush.springboot.reditclone.service;
 import java.util.Collection;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +21,10 @@ import static java.util.Collections.singletonList;
 @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-	private final UserRepository userRepository;
+	//private final UserRepository userRepository;
+	
+	@Autowired
+	UserRepository userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

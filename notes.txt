@@ -110,3 +110,8 @@ The JWT token is mainly composed of header, payload, signature.
 To know if the user is logged in or not we can look into SecurityContextHolder object
 
 A circular dependency between bean A and bean B will force one of the beans to be injected into the other prior to being fully initialized itself (a classic chicken/egg scenario).
+spring.main.allow-circular-references=true
+
+"email": "Beverly.Nikolaus@hotmail.com",
+    "username" : "Conner" , 
+    "password" : "j1NY3EWHCE2M66X"

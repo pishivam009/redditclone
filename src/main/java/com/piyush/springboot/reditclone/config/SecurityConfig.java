@@ -19,7 +19,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 
-	private final UserDetailsService userDetailsService;
+	//private final UserDetailsService userDetailsService;
+	@Autowired
+	UserDetailsService userDetailsService;
 	
 	
 	@Bean(BeanIds.AUTHENTICATION_MANAGER)
