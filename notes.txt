@@ -112,6 +112,14 @@ To know if the user is logged in or not we can look into SecurityContextHolder o
 A circular dependency between bean A and bean B will force one of the beans to be injected into the other prior to being fully initialized itself (a classic chicken/egg scenario).
 spring.main.allow-circular-references=true
 
+Now Validate JSON Web Token
+
+Client -> JWT Filter -> Controller
+
+If token is valid, spring will find it inside Security COntext, else throw exception
+
+Avoid writing business logic in controllers, delegate the request to service layer
+
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"
