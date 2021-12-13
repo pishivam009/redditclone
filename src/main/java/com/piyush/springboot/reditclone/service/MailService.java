@@ -19,12 +19,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MailService {
 
-//	private final JavaMailSender mailSender;
-//	private final MailContentBuilder mailContentBuilder;
-	@Autowired
-	MailContentBuilder mailContentBuilder;
-	@Autowired
-	JavaMailSender mailSender;
+private final JavaMailSender mailSender;
+private final MailContentBuilder mailContentBuilder;
+//	@Autowired
+//	MailContentBuilder mailContentBuilder;
+//	@Autowired
+//	JavaMailSender mailSender;
 
 	@Async
 	public void sendMail(NotificationEmail notificationEmail) {

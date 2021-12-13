@@ -120,6 +120,11 @@ If token is valid, spring will find it inside Security COntext, else throw excep
 
 Avoid writing business logic in controllers, delegate the request to service layer
 
+??@Transactional(readOnly = true)
+
+Spring security should know about our jwtauthenticationfilter class
+Spring tries this filter before trying username password authentication scheme
+
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"

@@ -21,10 +21,10 @@ import static java.util.Collections.singletonList;
 @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-	//private final UserRepository userRepository;
+	private final UserRepository userRepository;
 	
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	UserRepository userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
