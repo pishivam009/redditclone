@@ -125,21 +125,6 @@ Avoid writing business logic in controllers, delegate the request to service lay
 Spring security should know about our jwtauthenticationfilter class
 Spring tries this filter before trying username password authentication scheme
 
-MappingStruct : Mapping code to map two objects in java by just using annotations.
-Cumbersome to map pojo classes with large number of fields. Makes that tasks easy
-
-Add lombok depency in annotationProcessorPaths of mapstruct
-
-
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"
-
-"email": "Dariana.Jenkins@hotmail.com",
-    "username" : "Milo" , 
-    "password" : "qj_0amSA0QHo2br"
-
-{
-    "authenticationToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJNaWxvIn0.caDvYUWhq2KZWnbEkp4twlnj1ZMSKxYgOo7TuOf99gXHdMeFn_VEngiixFxS9lccFWNzOyTCzo78ba82O21HuoUpkuwvqJODD8m9ZYmZdhe4eVhyBx3HgcZfqBLawue7UDNqGh_BXW8nte-hbVl67qXb01sCTQ6MojPV-tnNuuuIZgQh1q3vkeB8geaH5E5aMPI0Y3LlV3-MEf6VnNdR6VkX6sV0URLZZhW8W9NC3u34wPo0QOQuKubpUsK33ENKjPBnJREn8Ehp2OwmIYZatQk4yM7G11v626vuZ5YMhcUF_JZ17N5y9d2EdpqyjkS3JkqRy-nZUgcP1vOUsDBcRw",
-    "username": "Milo"
-}

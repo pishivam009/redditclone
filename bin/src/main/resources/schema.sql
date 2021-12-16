@@ -1,0 +1,1 @@
+create database sprint_reddit_clone;
