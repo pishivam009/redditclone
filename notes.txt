@@ -129,7 +129,7 @@ MappingStruct : Mapping code to map two objects in java by just using annotation
 Cumbersome to map pojo classes with large number of fields. Makes that tasks easy
 
 Add lombok depency in annotationProcessorPaths of mapstruct
-
+@InheritInverseConfiguration opposite mapping to the mapping
 
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
