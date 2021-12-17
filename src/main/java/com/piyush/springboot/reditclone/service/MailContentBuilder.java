@@ -11,9 +11,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class MailContentBuilder {
 
-	//private final TemplateEngine templateEngine;
-	@Autowired
-	TemplateEngine templateEngine;
+	private final TemplateEngine templateEngine;
+	//@Autowired
+	//TemplateEngine templateEngine;
 	
 	String build(String message) {
 		Context context = new Context();

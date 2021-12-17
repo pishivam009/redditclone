@@ -32,25 +32,25 @@ import lombok.AllArgsConstructor;
 @Transactional
 public class AuthService {
 
-//	private final PasswordEncoder passwordEncoder;
-//	private final UserRepository userRepository;
-//	private final VerificationTokenRepository verificationTokenRepository;
-//	private final MailService mailService;
-//	private final AuthenticationManager authenticationManager;
-//	private final JwtProvider jwtProvider;
+	private final PasswordEncoder passwordEncoder;
+	private final UserRepository userRepository;
+	private final VerificationTokenRepository verificationTokenRepository;
+	private final MailService mailService;
+	private final AuthenticationManager authenticationManager;
+	private final JwtProvider jwtProvider;
 
-	@Autowired
-	PasswordEncoder passwordEncoder;
-	@Autowired
-	UserRepository userRepository;
-	@Autowired
-	VerificationTokenRepository verificationTokenRepository;
-	@Autowired
-	MailService mailService;
-	@Autowired
-	AuthenticationManager authenticationManager;
-	@Autowired
-	JwtProvider jwtProvider;
+//	@Autowired
+//	PasswordEncoder passwordEncoder;
+//	@Autowired
+//	UserRepository userRepository;
+//	@Autowired
+//	VerificationTokenRepository verificationTokenRepository;
+//	@Autowired
+//	MailService mailService;
+//	@Autowired
+//	AuthenticationManager authenticationManager;
+//	@Autowired
+//	JwtProvider jwtProvider;
 
 	public void signup(RegisterRequest registerRequest) {
 		User user = new User();
