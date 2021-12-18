@@ -127,3 +127,8 @@ Spring tries this filter before trying username password authentication scheme
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"
+    
+    
+    "email": "Timothy_Ratke15@gmail.com",
+    "username" : "Fleta" , 
+    "password" : "lw735lDH5A1PRIU"
