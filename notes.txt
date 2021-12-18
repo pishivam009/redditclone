@@ -18,7 +18,7 @@ Lombok generates boilerplate code at compile time
 
 @Data - generates getter and setters
 @Entity
-@Builder - generates builder methods for the class : Bulder design pattern
+@Builder - generates builder methods for the class : Builder design pattern
 
 
 @NotBlank needs this after Spring 2.3.0
@@ -37,7 +37,7 @@ EAGER = fetch immediately
 
 sprint.datasource.initialize=true runs when there is a schema.sql in src/main/resources
 
-@ManyToOne(fetch =FetchType.LAZY) is needed or else might get error while creating tables
+@ManyToOne(fetch=FetchType.LAZY) is needed or else might get error while creating tables
 
 MySQL -> Show Engines;
 InnoDB : Default, Transaction support, row-level locking, foreign key
@@ -111,6 +111,18 @@ To know if the user is logged in or not we can look into SecurityContextHolder o
 
 A circular dependency between bean A and bean B will force one of the beans to be injected into the other prior to being fully initialized itself (a classic chicken/egg scenario).
 spring.main.allow-circular-references=true
+
+Now Validate JSON Web Token
+Client -> JWT Filter -> Controller
+If token is valid, spring will find it inside Security COntext, else throw exception
+Avoid writing business logic in controllers, delegate the request to service layer
+
+
+??@Transactional(readOnly = true)
+Spring security should know about our jwtauthenticationfilter class
+Spring tries this filter before trying username password authentication scheme
+
+
 
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
