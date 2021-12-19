@@ -1,0 +1,130 @@
+Spring Initializer
+-Spring Web
+-Lombok
+-Spring Security
+-Spring Data JPA
+-MySQL Driver
+-Java Mail Sender
+
+
+Git:
+git init
+git add .
+git commit m "Message"
+git remote add origin url.git
+git push origin master
+
+Lombok generates boilerplate code at compile time
+
+@Data - generates getter and setters
+@Entity
+@Builder - generates builder methods for the class : Bulder design pattern
+
+
+@NotBlank needs this after Spring 2.3.0
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+@ManyToOne?? 
+@JoinColumn??
+?GenertationType
+
+LAZY = fetch when needed
+EAGER = fetch immediately
+
+
+sprint.datasource.initialize=true runs when there is a schema.sql in src/main/resources
+
+@ManyToOne(fetch =FetchType.LAZY) is needed or else might get error while creating tables
+
+MySQL -> Show Engines;
+InnoDB : Default, Transaction support, row-level locking, foreign key
+SQL engine is defined as software that recognizes and interprets SQL commands to access a relational database and interrogate data.
+
+
+Extend WebSecurityConfigurerAdapter and override its configure(http) method
+Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request to a Web application against which they are currently authenticated. CSRF attacks exploit the trust a Web application has in an authenticated user.
+So we disable it. 
+
+Instant : Date/Time purpose
+
+RegisterRequest -> Data Transfer Objects (DTO)
+
+Spring recommends constructor injector rather than field injection. So we would avoid @Autowiring
+
+@Transactional : because we are using SQL Database Transaction
+
+Thymeleaf: HTML Template Creation for Emails 
+<span th:text="${message}"></span> : For thymeleaf message injection
+
+Slf4j : Logger object
+
+SpringRedditException custom exception to give general message to user in case of exception rather than giving technical details
+
+MailTrap : Email Testing app
+
+@Lob: LargeObject
+
+??Email validation is failing
+
+auth/{token} -> @PathVariable String token
+
+
+User registration takes time- 10-11 sec, because we are sending mail to external server
+Can run mail sending functionality Asynchronously in a different thread
+@EnableAsync in main method
+@Async on top of method
+
+Alternate: MessageQueues like RabbitMQ or ActiveMQ : They provide reliability.
+But too heavyweight for our usecase
+
+@NotBlank -> should not be null or empty, atleast one non-whitespace character
+@NotEmpty -> should not be null or empty
+
+
+Auth Flow
+1. Login req (client->server)
+2. Server creates JWT
+3. Server sends JWT to client
+4.Client uses JWT to authenticate itself
+5.Server Validates JWT
+6. Server Responds to client
+
+
+Sometimes org.springframework.security.core.userdetails.User is used
+
+???Authentication Steps
+
+AuthenticationManager
+For an interface we we do not specify which bean to create, then spring throws an exception since there are multiple implementations
+
+
+JWT Dependencies: jjwt-api, jjwt-impl, jjwt-jackson
+
+The JWT token is mainly composed of header, payload, signature.
+
+??KeyStore Steps
+
+To know if the user is logged in or not we can look into SecurityContextHolder object
+
+A circular dependency between bean A and bean B will force one of the beans to be injected into the other prior to being fully initialized itself (a classic chicken/egg scenario).
+spring.main.allow-circular-references=true
+
+Now Validate JSON Web Token
+
+Client -> JWT Filter -> Controller
+
+If token is valid, spring will find it inside Security COntext, else throw exception
+
+Avoid writing business logic in controllers, delegate the request to service layer
+
+??@Transactional(readOnly = true)
+
+Spring security should know about our jwtauthenticationfilter class
+Spring tries this filter before trying username password authentication scheme
+
+"email": "Beverly.Nikolaus@hotmail.com",
+    "username" : "Conner" , 
+    "password" : "j1NY3EWHCE2M66X"

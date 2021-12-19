@@ -113,12 +113,14 @@ A circular dependency between bean A and bean B will force one of the beans to b
 spring.main.allow-circular-references=true
 
 Now Validate JSON Web Token
+
 Client -> JWT Filter -> Controller
 If token is valid, spring will find it inside Security COntext, else throw exception
 Avoid writing business logic in controllers, delegate the request to service layer
 
 
 ??@Transactional(readOnly = true)
+
 Spring security should know about our jwtauthenticationfilter class
 Spring tries this filter before trying username password authentication scheme
 
@@ -127,6 +129,7 @@ Cumbersome to map pojo classes with large number of fields. Makes that tasks eas
 
 Add lombok depency in annotationProcessorPaths of mapstruct
 @InheritInverseConfiguration opposite mapping to the mapping
+
 
 see the class CommentMapperImpl inside the target/generated-sources/annotations/com/example/../mapper path
 m2e-apt install from marketplace
@@ -154,3 +157,14 @@ Post will be created only when subreddit exists. Or else will give internal serv
     "email": "Timothy_Ratke15@gmail.com",
     "username" : "Fleta" , 
     "password" : "lw735lDH5A1PRIU"
+
+
+"email": "Dariana.Jenkins@hotmail.com",
+    "username" : "Milo" , 
+    "password" : "qj_0amSA0QHo2br"
+
+{
+    "authenticationToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJNaWxvIn0.caDvYUWhq2KZWnbEkp4twlnj1ZMSKxYgOo7TuOf99gXHdMeFn_VEngiixFxS9lccFWNzOyTCzo78ba82O21HuoUpkuwvqJODD8m9ZYmZdhe4eVhyBx3HgcZfqBLawue7UDNqGh_BXW8nte-hbVl67qXb01sCTQ6MojPV-tnNuuuIZgQh1q3vkeB8geaH5E5aMPI0Y3LlV3-MEf6VnNdR6VkX6sV0URLZZhW8W9NC3u34wPo0QOQuKubpUsK33ENKjPBnJREn8Ehp2OwmIYZatQk4yM7G11v626vuZ5YMhcUF_JZ17N5y9d2EdpqyjkS3JkqRy-nZUgcP1vOUsDBcRw",
+    "username": "Milo"
+}
+

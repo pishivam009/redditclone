@@ -1,5 +1,7 @@
 package com.piyush.springboot.reditclone.model;
 
+
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +21,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Builder
 public class Subreddit {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -32,3 +35,4 @@ public class Subreddit {
     @ManyToOne(fetch = LAZY)
     private User user;
 }
+

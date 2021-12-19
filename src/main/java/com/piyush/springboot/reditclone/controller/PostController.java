@@ -1,5 +1,6 @@
 package com.piyush.springboot.reditclone.controller;
 
+
 import static org.springframework.http.ResponseEntity.status;
 
 import java.util.List;
@@ -54,5 +55,6 @@ public class PostController {
 	    public ResponseEntity<List<PostResponse>> getPostsByUsername(@PathVariable String name) {
 	        return status(HttpStatus.OK).body(postService.getPostsByUsername(name));
 	    }
-	
+
+
 }

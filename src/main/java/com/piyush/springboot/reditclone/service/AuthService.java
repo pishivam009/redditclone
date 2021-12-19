@@ -145,6 +145,7 @@ import java.util.UUID;
 @Transactional
 public class AuthService {
 
+
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final VerificationTokenRepository verificationTokenRepository;
@@ -209,5 +210,6 @@ public class AuthService {
                 .username(loginRequest.getUsername())
                 .build();
     }
+
 
 }

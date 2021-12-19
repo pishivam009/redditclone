@@ -18,8 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 class MailService {
 
+
     private final JavaMailSender mailSender;
     private final MailContentBuilder mailContentBuilder;
+
 
     @Async
     void sendMail(NotificationEmail notificationEmail) {

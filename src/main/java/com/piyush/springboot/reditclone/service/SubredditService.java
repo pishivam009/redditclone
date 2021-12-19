@@ -1,7 +1,9 @@
 package com.piyush.springboot.reditclone.service;
 
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +13,11 @@ import com.piyush.springboot.reditclone.mapper.SubredditMapper;
 import com.piyush.springboot.reditclone.model.Subreddit;
 import com.piyush.springboot.reditclone.repository.SubredditRepository;
 
+
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
+
 
 @Service
 @AllArgsConstructor
@@ -21,6 +25,7 @@ import static java.util.stream.Collectors.toList;
 public class SubredditService {
 
 	private final SubredditRepository subredditRepository;
+
     private final SubredditMapper subredditMapper;
 
     @Transactional
@@ -47,4 +52,5 @@ public class SubredditService {
                 .orElseThrow(() -> new SpringRedditException("No subreddit found with ID - " + id));
         return subredditMapper.mapSubredditToDto(subreddit);
     }
+
 }
