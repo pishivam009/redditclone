@@ -1,4 +1,5 @@
 package com.piyush.springboot.reditclone.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

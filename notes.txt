@@ -129,8 +129,19 @@ Add lombok depency in annotationProcessorPaths of mapstruct
 @InheritInverseConfiguration opposite mapping to the mapping
 
 see the class CommentMapperImpl inside the target/generated-sources/annotations/com/example/../mapper path
-
+m2e-apt install from marketplace
 mvn clean install
+
+Marketplace connection issue:
+The solution is:
+
+Go to-Window->Preferences->General->Network Connections
+
+Choose "Active Provider" To "Direct"
+
+then click "apply" and then "ok".
+
+It will Start Opening.
 
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
