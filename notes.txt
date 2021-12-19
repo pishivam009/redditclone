@@ -18,7 +18,7 @@ Lombok generates boilerplate code at compile time
 
 @Data - generates getter and setters
 @Entity
-@Builder - generates builder methods for the class : Bulder design pattern
+@Builder - generates builder methods for the class : Builder design pattern
 
 
 @NotBlank needs this after Spring 2.3.0
@@ -37,7 +37,7 @@ EAGER = fetch immediately
 
 sprint.datasource.initialize=true runs when there is a schema.sql in src/main/resources
 
-@ManyToOne(fetch =FetchType.LAZY) is needed or else might get error while creating tables
+@ManyToOne(fetch=FetchType.LAZY) is needed or else might get error while creating tables
 
 MySQL -> Show Engines;
 InnoDB : Default, Transaction support, row-level locking, foreign key
@@ -115,10 +115,9 @@ spring.main.allow-circular-references=true
 Now Validate JSON Web Token
 
 Client -> JWT Filter -> Controller
-
 If token is valid, spring will find it inside Security COntext, else throw exception
-
 Avoid writing business logic in controllers, delegate the request to service layer
+
 
 ??@Transactional(readOnly = true)
 
@@ -131,9 +130,34 @@ Cumbersome to map pojo classes with large number of fields. Makes that tasks eas
 Add lombok depency in annotationProcessorPaths of mapstruct
 @InheritInverseConfiguration opposite mapping to the mapping
 
+
+see the class CommentMapperImpl inside the target/generated-sources/annotations/com/example/../mapper path
+m2e-apt install from marketplace
+mvn clean install
+
+Marketplace connection issue:
+The solution is:
+
+Go to-Window->Preferences->General->Network Connections
+
+Choose "Active Provider" To "Direct"
+
+then click "apply" and then "ok".
+
+It will Start Opening.
+
+Add Post Controller/Service/Mapper and associated exceptions
+Post will be created only when subreddit exists. Or else will give internal server error
+
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"
+    
+    
+    "email": "Timothy_Ratke15@gmail.com",
+    "username" : "Fleta" , 
+    "password" : "lw735lDH5A1PRIU"
+
 
 "email": "Dariana.Jenkins@hotmail.com",
     "username" : "Milo" , 
@@ -143,3 +167,4 @@ Add lombok depency in annotationProcessorPaths of mapstruct
     "authenticationToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJNaWxvIn0.caDvYUWhq2KZWnbEkp4twlnj1ZMSKxYgOo7TuOf99gXHdMeFn_VEngiixFxS9lccFWNzOyTCzo78ba82O21HuoUpkuwvqJODD8m9ZYmZdhe4eVhyBx3HgcZfqBLawue7UDNqGh_BXW8nte-hbVl67qXb01sCTQ6MojPV-tnNuuuIZgQh1q3vkeB8geaH5E5aMPI0Y3LlV3-MEf6VnNdR6VkX6sV0URLZZhW8W9NC3u34wPo0QOQuKubpUsK33ENKjPBnJREn8Ehp2OwmIYZatQk4yM7G11v626vuZ5YMhcUF_JZ17N5y9d2EdpqyjkS3JkqRy-nZUgcP1vOUsDBcRw",
     "username": "Milo"
 }
+

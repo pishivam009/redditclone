@@ -9,8 +9,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class ReditcloneApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ReditcloneApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(com.piyush.springboot.reditclone.ReditcloneApplication.class, args);
+    }
 
 }

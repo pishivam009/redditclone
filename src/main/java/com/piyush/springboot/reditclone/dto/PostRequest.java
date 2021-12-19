@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-    private String email;
-    private String username;
-    private String password;
-
+public class PostRequest {
+ private Long postId;
+ private String subredditName;
+ private String postName;
+ private String url;
+ private String description;
 }
