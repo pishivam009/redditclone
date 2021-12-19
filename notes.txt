@@ -143,6 +143,9 @@ then click "apply" and then "ok".
 
 It will Start Opening.
 
+Add Post Controller/Service/Mapper and associated exceptions
+Post will be created only when subreddit exists. Or else will give internal server error
+
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
     "password" : "j1NY3EWHCE2M66X"
