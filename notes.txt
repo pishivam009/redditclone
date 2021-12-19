@@ -122,7 +122,15 @@ Avoid writing business logic in controllers, delegate the request to service lay
 Spring security should know about our jwtauthenticationfilter class
 Spring tries this filter before trying username password authentication scheme
 
+MappingStruct : Mapping code to map two objects in java by just using annotations.
+Cumbersome to map pojo classes with large number of fields. Makes that tasks easy
 
+Add lombok depency in annotationProcessorPaths of mapstruct
+@InheritInverseConfiguration opposite mapping to the mapping
+
+see the class CommentMapperImpl inside the target/generated-sources/annotations/com/example/../mapper path
+
+mvn clean install
 
 "email": "Beverly.Nikolaus@hotmail.com",
     "username" : "Conner" , 
