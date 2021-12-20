@@ -168,3 +168,7 @@ Post will be created only when subreddit exists. Or else will give internal serv
     "username": "Milo"
 }
 
+Mapping								HTTP Method	Method Name
+/api/comments/						POST		createComments
+/api/comments/by-postId/{postId}	GET		getAllCommentsForPost
+/api/comments/by-user/{userName}	GET		getCommentsByUsername
