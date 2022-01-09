@@ -179,3 +179,14 @@ No way to add import statement, so specified the whole path
 
 
 "user" table cannot be created in other RDBMS such as Oracle or Postgres as it is a reserved keyword.
+
+
+Can use a method to find most recent vote by a user
+User should be able to upvote or downvote only once consecutively
+
+
+TimeAgo : is a Kotlin Library we need to add some external dependencies like kotlin-stdlib-jdk8 , kotlin-test-junit and a plugin – kotlin-maven-plugin
+
+Changed PostMapper.java from an interface to abstract class, this is because we need information to map the new fields (voteCount, commentCount and duration)
+
+Add <pluginManagement> in <build> : pom.xml to resolve Plugin execution not covered by lifecycle configuration error 

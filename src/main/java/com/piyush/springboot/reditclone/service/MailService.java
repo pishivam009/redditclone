@@ -30,7 +30,9 @@ class MailService {
             messageHelper.setFrom("springreddit@email.com");
             messageHelper.setTo(notificationEmail.getRecipient());
             messageHelper.setSubject(notificationEmail.getSubject());
-            messageHelper.setText(notificationEmail.getBody());
+          //Before messageHelper.setText(mailContentBuilder.build(notificationEmail.getBody()));
+         // After
+         messageHelper.setText(notificationEmail.getBody()); //not necessary, mail is looking fine
         };
         try {
             mailSender.send(messagePreparator);
