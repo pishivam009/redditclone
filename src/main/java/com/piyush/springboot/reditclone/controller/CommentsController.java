@@ -1,10 +1,14 @@
 package com.piyush.springboot.reditclone.controller;
 
+import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.ResponseEntity.status;
+
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +22,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/comments/")
+@RequestMapping("/api/comments")
 public class CommentsController {
 
 	private final CommentService commentService;
@@ -29,14 +33,14 @@ public class CommentsController {
         return new ResponseEntity<>(CREATED);
     }
 	
-	@GetMapping
-    public ResponseEntity<List<CommentsDto>> getAllCommentsForPost(@RequestParam("postId") Long postId) {
+	@GetMapping("/by-post/{postId}")
+    public ResponseEntity<List<CommentsDto>> getAllCommentsForPost(@PathVariable Long postId) {
         return status(OK)
                 .body(commentService.getCommentByPost(postId));
     }
 
-    @GetMapping
-    public ResponseEntity<List<CommentsDto>> getAllCommentsByUser(@RequestParam("userName") String userName) {
+    @GetMapping("/by-user/{userName}")
+    public ResponseEntity<List<CommentsDto>> getAllCommentsByUser(@PathVariable String userName) {
         return status(OK).body(commentService.getCommentsByUser(userName));
     }
 	

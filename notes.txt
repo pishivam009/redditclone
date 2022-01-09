@@ -172,3 +172,10 @@ Mapping								HTTP Method	Method Name
 /api/comments/						POST		createComments
 /api/comments/by-postId/{postId}	GET		getAllCommentsForPost
 /api/comments/by-user/{userName}	GET		getCommentsByUsername
+
+
+expression = "java(java.time.Instant.now())
+No way to add import statement, so specified the whole path
+
+
+"user" table cannot be created in other RDBMS such as Oracle or Postgres as it is a reserved keyword.
