@@ -190,3 +190,10 @@ TimeAgo : is a Kotlin Library we need to add some external dependencies like kot
 Changed PostMapper.java from an interface to abstract class, this is because we need information to map the new fields (voteCount, commentCount and duration)
 
 Add <pluginManagement> in <build> : pom.xml to resolve Plugin execution not covered by lifecycle configuration error 
+
+Add server.error.include-message=always
+
+Backend logout difficult due to Json web token:
+SOlution: Delete token from browser, Introduce expiration time for JWT, Refresh token, token blacklisting (can be imporved by using Redis in memory database)
+
+If Jwt expired, no information will be available in SecurityContext
