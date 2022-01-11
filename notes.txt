@@ -197,3 +197,32 @@ Backend logout difficult due to Json web token:
 SOlution: Delete token from browser, Introduce expiration time for JWT, Refresh token, token blacklisting (can be imporved by using Redis in memory database)
 
 If Jwt expired, no information will be available in SecurityContext
+
+API documentation: http://localhost:8080/swagger-ui.html : 403 Unauthorized
+
+The springfox plugin is not compatible with PathPattern-based matching in Spring MVC which has replaced the previous Ant-based matching in the Spring Boot default settings. See e.g. here
+You can try to set spring.mvc.pathmatch.matching-strategy=ant_path_matcher to flip that property back to its previous default value. But this won't help if you use actuators which are not effected by that property.
+
+try upgrade version of springfox, add spring fox starter and remove @EnableSwagger2
+
+Dependencies to be added
+
+        <!--springfox dependencies for api documentations in swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        
+        
+Or use springdocs (OpenAPI)
